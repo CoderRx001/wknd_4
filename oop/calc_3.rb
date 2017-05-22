@@ -4,7 +4,7 @@
 # DRY up all the code below - there shouldn't be a single method duplicated between
 # any two classes.
 
-class SimpleCalculator
+module SimpleCalculator
 
   def add(first_number, second_number)
     first_number + second_number
@@ -24,23 +24,8 @@ class SimpleCalculator
 
 end
 
-class FancyCalculator
-
-  def add(first_number, second_number)
-    first_number + second_number
-  end
-
-  def subtract(first_number, second_number)
-    first_number - second_number
-  end
-
-  def multiply(first_number, second_number)
-    first_number * second_number
-  end
-
-  def divide(first_number, second_number)
-    first_number / second_number
-  end
+module FancyCalculator
+  include SimpleCalculator
 
   def square_root(number)
     Math.sqrt(number)
@@ -49,26 +34,8 @@ class FancyCalculator
 end
 
 class WhizBangCalculator
-
-  def add(first_number, second_number)
-    first_number + second_number
-  end
-
-  def subtract(first_number, second_number)
-    first_number - second_number
-  end
-
-  def multiply(first_number, second_number)
-    first_number * second_number
-  end
-
-  def divide(first_number, second_number)
-    first_number / second_number
-  end
-
-  def square_root(number)
-    Math.sqrt(number)
-  end
+  include SimpleCalculator
+  include FancyCalculator
 
   def hypotenuse(first_number, second_number)
     Math.hypot(first_number, second_number)

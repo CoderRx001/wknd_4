@@ -4,4 +4,6 @@
 
 haystack = {hay: [:hay, :hay, :hay, {hay: {hay: [:hay, {hay: [:hay, :hay, :needle]}, :hay, :hay, :hay]}}, :hay, :hay]}
 
-  if haystack = [;needle], return || else [] 
+
+
+  p haystack[:hay][3][:hay][:hay][1][:hay][2]
